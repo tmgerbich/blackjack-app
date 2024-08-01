@@ -23,6 +23,7 @@ public class Main {
         testDealer.hit(testDeck);
         System.out.println(testDealer.getHand());
         System.out.println(testDealer.hasBlackjack());
+        testDealer.printHand();
 
 
     }
