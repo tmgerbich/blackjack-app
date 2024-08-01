@@ -4,7 +4,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Blackjack");
 
-        System.out.println(Card.Rank.ACE.getRankName() + " has a value of " + Card.Rank.ACE.getRankValue());
+ Card card = new Card(Suit.HEARTS, Rank.ACE);
+ System.out.println(card);
+
+        Deck testDeck = new Deck(true);
+
+        System.out.println(testDeck);
 
     }
 }

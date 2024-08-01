@@ -1,27 +1,51 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 import java.util.Random;
 
 public class Deck implements DeckActions{
-
-    private Objects/* you can change this to any type you want*/ myCards;
+    private ArrayList<Card> deck;
     private int numCards;
 
+    //make a deck with all 52 cards
+    public Deck(boolean makeDeck){
+        deck = new ArrayList<Card>();
+        if(makeDeck){
+            for(Suit suit : Suit.values()){
+                for(Rank rank : Rank.values()){
+                    deck.add(new Card(suit, rank));
+                }
+            }
+        }
+    }
 
     @Override
     public void shuffle() {
-
+        Collections.shuffle(deck);
     }
 
     @Override
     public Card dealNextCard() {
-        return null;
+        Random rand = new Random();
+        int randomNum = rand.nextInt(deck.size());
+        Card card = deck.get(randomNum);
+        deck.remove(randomNum);
+        return card;
     }
 
     @Override
     public void printDeck(int numToPrint) {
 
+    }
+
+    public String toString(){
+        String output = "";
+
+        for(Card card: deck){
+            output += card.toString() + "\n";
+        }
+        return output;
     }
 }
