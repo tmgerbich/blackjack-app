@@ -23,9 +23,9 @@ public class GameRunner {
         System.out.println("What's your name?");
         String name = sc.nextLine();
         player = new Player(name);
+        Game game = new Game(dealer, player);
 
         while(true){
-            Game game = new Game(dealer, player);
             System.out.println("Do you want to play blackjack? (y/n)");
             String response = sc.nextLine();
             if(response.equalsIgnoreCase("y")){

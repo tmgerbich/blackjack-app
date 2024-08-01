@@ -21,7 +21,11 @@ public class Player extends Person {
                 return;
             } else if (input.equalsIgnoreCase("hit")) {
                 super.hit(deck);
+                System.out.println("You hit!");
                 super.printHand();
+                if (super.isBusted()) {
+                    return;
+                }
             } else {
                 System.out.println("Invalid input");
             }

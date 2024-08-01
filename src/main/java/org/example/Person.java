@@ -37,12 +37,20 @@ abstract class Person {
 
     public void hit(Deck deck) {
         this.hand.takeCardFromDeck(deck);
-        System.out.println("You hit!");
+
     }
 
     public boolean hasBlackjack(){
         if (this.hand.calculatedValue() == 21) {
             System.out.println(this.name + " has blackjack!");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isBusted(){
+        if (this.hand.calculatedValue() > 21) {
             return true;
         } else {
             return false;
