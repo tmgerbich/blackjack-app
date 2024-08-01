@@ -30,6 +30,8 @@ public class GameRunner {
             String response = sc.nextLine();
             if(response.equalsIgnoreCase("y")){
                 game.playRound();
+                player.clearHand();
+                dealer.clearHand();
 
             } else if (response.equalsIgnoreCase("n")) {
                 System.out.println("Goodbye!");

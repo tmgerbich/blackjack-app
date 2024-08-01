@@ -15,6 +15,12 @@ public class Hand {
         hand.add(deck.dealNextCard());
     }
 
+    public void clearHand() {
+        if (this.hand != null) {
+            this.hand.clear();
+        }
+    }
+
     public int calculatedValue() {
         int value = 0;
         int aceCount = 0;

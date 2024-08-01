@@ -5,6 +5,7 @@ public class Game {
     private Dealer dealer;
     private int wins;
     private int losses;
+    private int draws;
 
     public Game(Dealer dealer, Player player) {
         this.dealer = dealer;
@@ -18,9 +19,15 @@ public class Game {
         deck.shuffle();
         dealer.initialDeal(deck);
         player.initialDeal(deck);
+        if(dealer.hasBlackjack() && player.hasBlackjack()) {
+
+        }
+        if(player.hasBlackjack())
         dealer.printHiddenHand();
         player.printHand();
         player.makeDecision(deck);
+        dealer.makeDecision(deck);
+
 
     }
 

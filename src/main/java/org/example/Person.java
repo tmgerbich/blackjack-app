@@ -17,6 +17,10 @@ abstract class Person {
         this.hand = hand;
     }
 
+    public void clearHand() {
+            this.hand.clearHand();
+    }
+
     public String getName(){
         return this.name;
     }
@@ -38,6 +42,7 @@ abstract class Person {
 
     public boolean hasBlackjack(){
         if (this.hand.calculatedValue() == 21) {
+            System.out.println(this.name + " has blackjack!");
             return true;
         } else {
             return false;
