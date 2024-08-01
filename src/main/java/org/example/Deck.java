@@ -26,6 +26,7 @@ public class Deck implements DeckActions{
         Collections.shuffle(deck);
     }
 
+    //deal card and remove from deck
     @Override
     public Card dealNextCard() {
         Random rand = new Random();
@@ -40,10 +41,12 @@ public class Deck implements DeckActions{
 
     }
 
+    //print all remaining cards in the deck
+    @Override
     public String toString(){
         String output = "";
 
-        for(Card card: deck){
+        for(Card card: this.deck){
             output += card.toString() + "\n";
         }
         return output;

@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 
 //implementation of blackjack player
-public class Player {
+public class Player extends Person {
 
-
+    public Player(String name) {
+        super.setName(name);
+    }
 
 
 }
